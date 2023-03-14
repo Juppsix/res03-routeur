@@ -29,8 +29,13 @@ private function splitRouteAndParameters(string $route) : array
         else if($tab[0] === "produits") // écrire une condition pour le cas où la route commence par "produits"  
         {  
             // mettre les bonnes valeurs dans le tableau  
-            $routeAndParams["route"] = "produits";  
-            $routeAndParams["productSlug"] = $tab[1];  
+            $routeAndParams["route"] = "produits";
+            
+            if (isset($tab[1]))
+            {
+                $routeAndParams["productSlug"] = $tab[1];  
+            }
+          
         }
         
     }  
